@@ -4,6 +4,10 @@ import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import {Home} from "./scenes/Home/Home";
 import {Login} from "./scenes/Login/Login";
 import {Register} from "./scenes/Register/Register"
+import Dashboard from "./scenes/Dashboard/DashboardPage";
+import DashboardPage from "./scenes/Dashboard/DashboardPage";
+import FormPage from "./scenes/Form/FormPage";
+import React from "react"
 
 function App() {
   return <BrowserRouter>
@@ -27,6 +31,8 @@ function App() {
       <Route path="/" element={<Home/>}/>
       <Route path="/login" element={<Login/>}/>
       <Route path="/register" element={<Register/>}/>
+      <Route exact path="/dashboard" element={<DashboardPage/>} />
+      <Route path="/form" element={<FormPage/>} />
     </Routes>
   </BrowserRouter>;
 }

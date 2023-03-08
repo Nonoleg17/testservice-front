@@ -2,6 +2,7 @@ import {useState} from "react";
 import axios from "axios";
 import {Navigate} from 'react-router-dom';
 import {REGISTER_PATH} from "../../const/routes";
+import React from "react"
 
 export const Register = () => {
     const [name, setName] = useState('');

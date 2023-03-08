@@ -2,7 +2,7 @@ import axios from "axios";
 import {Navigate} from "react-router-dom";
 import {useState} from "react";
 import {LOGIN_PATH} from "../../const/routes";
-
+import React from "react";
 export function Login () {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
