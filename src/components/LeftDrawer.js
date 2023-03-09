@@ -73,7 +73,6 @@ const LeftDrawer = props => {
       <div className={classes.logo}>Material Admin</div>
       <div className={classNames(classes.avatarRoot, !navDrawerOpen && classes.avatarRootMini)}>
         <Avatar src={data.user.avatar} size={navDrawerOpen ? 48 : 32} classes={{ root: classes.avatarIcon }} />
-        <span className={classes.avatarSpan}>{data.user.userName}</span>
       </div>
       <Menus menus={props.menus} navDrawerOpen={navDrawerOpen} />
     </div>
