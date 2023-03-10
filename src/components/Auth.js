@@ -1,12 +1,13 @@
+import React, {useState} from "react";
+import defaultTheme, {customTheme} from "../theme";
 import {makeStyles, ThemeProvider} from "@material-ui/core";
+import Header from "./Header";
+import LeftDrawer from "./LeftDrawer";
+import Data from "../data";
 import ButtonBase from "@material-ui/core/ButtonBase";
-import Header from "../../components/Header"
-import LeftDrawer from "../../components/LeftDrawer";
-import RightDrawer from "../../components/RightDrawer";
-import {useState} from "react";
-import Data from "../../data";
-import defaultTheme, { customTheme } from "../../theme";
-import React from "react"
+import RightDrawer from "./RightDrawer";
+import {connect} from "react-redux";
+
 const  useStyles = makeStyles(theme =>({
     container: {
         margin: "80px 20px 20px 15px",
@@ -39,7 +40,8 @@ const  useStyles = makeStyles(theme =>({
     }
 }))
 
-export function Home() {
+export const Auth = (props) => {
+
     const classes = useStyles()
     const [navDrawerOpen, setNavDrawerOpen] = useState(true)
     const [rightDrawerOpen, setRightDrawerOpen] = useState(true)
@@ -71,7 +73,10 @@ export function Home() {
                 handleChangeRightDrawer={()=>setRightDrawerOpen(!rightDrawerOpen)}
                 handleChangeTheme={handleChangeTheme}
             />
-
+            {props.children}
         </ThemeProvider>
+
     );
-}
+
+};
+export default Auth;
