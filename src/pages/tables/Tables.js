@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+import {Button, Grid, TableCell} from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import MUIDataTable from "mui-datatables";
 
@@ -10,6 +10,7 @@ import Table from "../dashboard/components/Table/Table";
 
 // data
 import mock from "../dashboard/mock";
+import {Link} from "react-router-dom";
 
 const datatableData = [
   ["Joe James", "Example Inc.", "Yonkers", "NY"],
@@ -47,17 +48,21 @@ export default function Tables() {
           <MUIDataTable
             title="Employee List"
             data={datatableData}
-            columns={["Name", "Company", "City", "State"]}
+            columns={["Title", "Start", "Ol", "Roba"]}
             options={{
               filterType: "checkbox",
+              jumpToPage: true,
+              onRowClick: (rowData, rowState) => {
+                console.log(rowData, rowState)
+
+
+
+              }
             }}
+
           />
         </Grid>
-        <Grid item xs={12}>
-          <Widget title="Material-UI Table" upperTitle noBodyPadding bodyClass={classes.tableOverflow}>
-            <Table data={mock.table} />
-          </Widget>
-        </Grid>
+
       </Grid>
     </>
   );
